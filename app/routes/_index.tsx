@@ -50,8 +50,8 @@ export default function Index() {
       // Redirect to users route after successful login
       window.location.href = "/user"; // Replace with appropriate redirect logic
     } catch (error) {
-      console.error('Unexpected error:', error);
-    setError('It seems the credentials are wrong. Please try again.');
+      console.error("Unexpected error:", error);
+      setError("It seems the credentials are wrong. Please try again.");
       // Handle errors gracefully (e.g., display error messages)
     }
   };
@@ -92,12 +92,16 @@ export default function Index() {
                 onChange={(e) => setPassword(e.target.value)}
                 className="mb-4"
               />
-              {error && (
-  <p className="text-red-500 text-sm mb-2">{error}</p>
-)}
-              <Button type="submit" color="primary" className="w-full mb-2">
+              {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+              <Button type="submit" color="primary" className="w-full mb-2 text-lg">
                 Student Login
               </Button>
+              <p className="text-center mt-4 font-bold text-lg">
+                Don't have an account?{" "}
+                <Link to="/signup" className="text-blue-500 underline font-bold">
+                  Sign Up
+                </Link>
+              </p>
             </form>
           </Card>
         </div>
